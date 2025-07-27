@@ -1,6 +1,6 @@
 # Smart Absorption
 
-**| [简体中文](README-zh_cn.md) | >English< |**
+**| >English< | [简体中文](README-zh_cn.md) |**
 
 ![Banner](smart_absorption_title.png)
 

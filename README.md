@@ -5,7 +5,7 @@
 ![Banner](smart_absorption_title.png)
 
 ## 📑 Introduction
-In vanilla Minecraft, when players have absorption health (commonly called **golden hearts**) from both status effects and other sources (like some mods), all golden hearts are calculated together. This causes an issue:
+In Minecraft, when players have absorption health (commonly called **golden hearts**) from both status effects and other sources (like some mods), all golden hearts are calculated together. This causes an issue:
 
 > **When having an Absorption status effect, if you gain additional golden hearts through other means, that Absorption effect will persist until all golden hearts are depleted, preventing you from obtaining new Absorption effects during this period.**
 

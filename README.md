@@ -28,8 +28,8 @@ This mod perfectly solves this issue by separating golden hearts from different 
 Q: Does this mod significantly affect vanilla mechanics?  
 A: Not at all. You might not even notice its presence, as the modified behavior actually feels more intuitive.
 
-Q: Which Minecraft versions are supported?
+Q: Which Minecraft versions are supported?  
 A: Primarily maintained for 1.20.1, but will continue updating for other versions. Please submit an issue if you have urgent needs for other versions.
 
-Q: Forge/neoForge/Quilt versions?
+Q: Forge/neoForge/Quilt versions?  
 A: Only Fabric is officially supported, but third-party ports are encouraged.

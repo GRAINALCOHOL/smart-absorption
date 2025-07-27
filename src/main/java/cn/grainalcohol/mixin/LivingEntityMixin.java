@@ -34,6 +34,14 @@ public abstract class LivingEntityMixin implements AbsorptionAccessor {
         smartAbsorption$setStatusEffectAbsorptionAmount(smartAbsorption$getStatusEffectAbsorptionAmount() + amount);
     }
 
+    @Inject(method = "setAbsorptionAmount", at = @At("TAIL"))
+    private void onSetAbsorptionAmount(float amount, CallbackInfo ci) {
+        float amount1 = Math.max(0, amount);
+        if (amount1 < smartAbsorption$getStatusEffectAbsorptionAmount()) {
+            smartAbsorption$setStatusEffectAbsorptionAmount(amount1);
+        }
+    }
+
     @Inject(
             method = "applyDamage",
             at = @At(

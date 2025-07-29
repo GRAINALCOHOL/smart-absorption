@@ -1,4 +1,4 @@
-package cn.grainalcohol;
+package grainalcohol.smart_absorption;
 
 public interface AbsorptionAccessor {
     float smartAbsorption$getStatusEffectAbsorptionAmount();

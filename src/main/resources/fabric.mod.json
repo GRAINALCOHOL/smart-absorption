@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "smart-absorption",
+	"id": "smart_absorption",
 	"version": "${version}",
 	"name": "Smart Absorption",
 	"description": "This is an example description! Tell everyone what your mod is about!",
@@ -16,7 +16,7 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"cn.grainalcohol.SmartAbsorption"
+			"grainalcohol.smart_absorption.SmartAbsorption"
 		]
 	},
 	"mixins": [

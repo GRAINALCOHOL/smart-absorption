@@ -1,7 +1,6 @@
 package grainalcohol.smart_absorption.mixin;
 
 import grainalcohol.smart_absorption.AbsorptionAccessor;
-import grainalcohol.smart_absorption.SmartAbsorption;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffects;
@@ -26,9 +25,7 @@ public class PlayerEntityMixin {
     )
     private void modifyWhenDamage(DamageSource source, float amount, CallbackInfo ci, float f) {
         AbsorptionAccessor accessor = (AbsorptionAccessor)this;
-        SmartAbsorption.LOGGER.error("受伤前：{}", accessor.smartAbsorption$getStatusEffectAbsorptionAmount());
         accessor.smartAbsorption$addStatusEffectAbsorptionAmount(-(f - amount));
-        SmartAbsorption.LOGGER.error("受伤后：{}", accessor.smartAbsorption$getStatusEffectAbsorptionAmount());
         if (accessor.smartAbsorption$getStatusEffectAbsorptionAmount() <= 0) {
             ((LivingEntity) (Object) this).removeStatusEffect(StatusEffects.ABSORPTION);
         }

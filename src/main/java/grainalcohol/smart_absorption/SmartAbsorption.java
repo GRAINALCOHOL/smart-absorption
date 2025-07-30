@@ -18,15 +18,5 @@ public class SmartAbsorption implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
-//		LOGGER.info("====== Smart Absorption初始化开始 ======");
-//		// 检查Mixin环境
-//		try {
-//			Class<?> mixinEnvironment = Class.forName("org.spongepowered.asm.mixin.MixinEnvironment");
-//			Object currentEnv = mixinEnvironment.getMethod("getCurrentEnvironment").invoke(null);
-//			Object phaseObj = currentEnv.getClass().getMethod("getPhase").invoke(currentEnv);
-//			LOGGER.info("当前Mixin环境阶段: {}", phaseObj.toString());
-//		} catch (Exception e) {
-//			LOGGER.error("检查Mixin环境失败", e);
-//		}
 	}
 }

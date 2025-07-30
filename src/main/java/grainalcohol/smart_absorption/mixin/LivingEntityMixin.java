@@ -1,7 +1,6 @@
 package grainalcohol.smart_absorption.mixin;
 
 import grainalcohol.smart_absorption.AbsorptionAccessor;
-import grainalcohol.smart_absorption.SmartAbsorption;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
@@ -35,17 +34,11 @@ public abstract class LivingEntityMixin implements AbsorptionAccessor {
         smartAbsorption$setStatusEffectAbsorptionAmount(smartAbsorption$getStatusEffectAbsorptionAmount() + amount);
     }
 
-    @Inject(method = "<init>", at = @At("RETURN"))
-    private void onInit(CallbackInfo ci) {
-        SmartAbsorption.LOGGER.info("LivingEntityMixin已加载！");
-    }
-
     @Inject(method = "setAbsorptionAmount", at = @At("TAIL"))
     private void onSetAbsorptionAmount(float amount, CallbackInfo ci) {
         float amount1 = Math.max(0, amount);
         if (amount1 < smartAbsorption$getStatusEffectAbsorptionAmount()) {
             smartAbsorption$setStatusEffectAbsorptionAmount(amount1);
-            SmartAbsorption.LOGGER.error("设置后：{}", smartAbsorption$getStatusEffectAbsorptionAmount());
         }
     }
 
@@ -60,9 +53,7 @@ public abstract class LivingEntityMixin implements AbsorptionAccessor {
             locals = LocalCapture.CAPTURE_FAILHARD
     )
     private void modifyWhenDamage(DamageSource source, float amount, CallbackInfo ci, float f) {
-        SmartAbsorption.LOGGER.error("受伤前：{}", smartAbsorption$getStatusEffectAbsorptionAmount());
         smartAbsorption$addStatusEffectAbsorptionAmount(-(f - amount));
-        SmartAbsorption.LOGGER.error("受伤后：{}", smartAbsorption$getStatusEffectAbsorptionAmount());
         if (this.smartAbsorption$getStatusEffectAbsorptionAmount() <= 0) {
             ((LivingEntity) (Object) this).removeStatusEffect(StatusEffects.ABSORPTION);
         }

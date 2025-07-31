@@ -24,7 +24,9 @@ public class PlayerEntityMixin {
             locals = LocalCapture.CAPTURE_FAILHARD
     )
     private void modifyWhenDamage(DamageSource source, float amount, CallbackInfo ci, float f) {
-        AbsorptionAccessor accessor = (AbsorptionAccessor)this;
+        if (!(this instanceof AbsorptionAccessor accessor)){
+            return;
+        }
         accessor.smartAbsorption$addStatusEffectAbsorptionAmount(-(f - amount));
         if (accessor.smartAbsorption$getStatusEffectAbsorptionAmount() <= 0) {
             ((LivingEntity) (Object) this).removeStatusEffect(StatusEffects.ABSORPTION);

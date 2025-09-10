@@ -1,0 +1,16 @@
+{
+	"required": true,
+	"package": "grainalcohol.smart_absorption.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"AbsorptionStatusEffectMixin",
+		"LivingEntityMixin",
+		"PlayerEntityMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

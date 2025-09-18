@@ -1,0 +1,34 @@
+{
+	"schemaVersion": 1,
+	"id": "smart_absorption",
+	"version": "${version}",
+	"name": "Smart Absorption",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"GRAINALCOHOL"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/smart_absorption/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"grainalcohol.smart_absorption.SmartAbsorption"
+		]
+	},
+	"mixins": [
+		"smart_absorption.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.17.2",
+		"minecraft": "~1.19.3",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
